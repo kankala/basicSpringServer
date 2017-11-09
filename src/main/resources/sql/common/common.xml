@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="common">
+	
+	
+	
+	
+	
+	<select id="getRegion" resultType="net.kankala.spring.common.bean.CommonBean">
+	
+		select idx, name FROM region
+	</select>
+	
+	<select id="getInstallType" resultType="net.kankala.spring.common.bean.CommonBean">
+	
+		select idx, name FROM installType
+	</select>
+	
+	<select id="branchIdCheck" parameterType="net.kankala.spring.common.bean.CommonBean" resultType="net.kankala.spring.common.bean.CommonBean">
+	
+		select idx, name FROM branchOffice
+		where name like #{name}
+	</select>
+	
+	<select id="advertiserIdCheck" parameterType="net.kankala.spring.common.bean.CommonBean" resultType="net.kankala.spring.common.bean.CommonBean">
+	
+		select idx, name FROM advertiser
+		where name like #{name}
+	</select>
+	
+	<select id="agencyIdCheck" parameterType="net.kankala.spring.common.bean.CommonBean" resultType="net.kankala.spring.common.bean.CommonBean">
+	
+		select idx, name FROM agency
+		where name like #{name}
+	</select>
+	
+	<select id="userIdCheck" parameterType="net.kankala.spring.common.bean.CommonBean" resultType="net.kankala.spring.common.bean.CommonBean">
+	
+		select idx, id FROM user
+		where id like #{id}
+	</select>
+	
+	
+	
+	
+	
+</mapper> 

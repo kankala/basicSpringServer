@@ -1,0 +1,175 @@
+body{
+}
+
+section{
+	max-width: 1920px;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	
+	background-color: white;
+	
+	
+	
+}
+
+a {
+	cursor:pointer;
+	text-decoration:none;
+	color: #000000;
+}
+a:hover { 
+	text-decoration:none;
+	font-weight: bold;
+	color: blue;
+	
+}
+ul{
+	list-style:none;
+	margin: 0;  padding: 0;
+	 
+}
+
+
+#subMenu {
+	max-width: 1920px;
+	
+	padding-top : 2%;
+	top:1%;
+	padding-bottom : 3%;
+	text-align:center;
+	height: 5%;
+	width: 100%;
+	margin: 0 auto;
+	min-height: 40px;
+}
+
+#subMenu button{
+	
+	float: left;
+	margin-right:3%;
+	margin: 0 auto;
+	cursor:pointer;
+	text-align: center;
+	font-size: 1.2em;
+}
+
+
+
+#didListBox{
+	max-width: 1920px;
+	max-height: 1920px;
+	height: 100%;
+	width:95%;
+	margin: 0 auto;
+	border-radius: 10px 10px 10px 10px;
+	
+}
+
+#fileListBox{
+	max-width: 1920px;
+	max-height: 1920px;
+	height: 100%;
+	width:95%;
+	margin: 0 auto;
+	border-radius: 10px 10px 10px 10px;
+	
+}
+.list{
+	font-size: 1.0em;
+	margin-top :10px;
+	margin: 0 auto;
+	width: 100%;
+}
+.list tbody{
+}
+
+thead {
+	background-color:silver;
+	border-bottom: 1px solid #000000;
+	
+}
+
+
+th {
+
+	text-align:center;
+}
+
+td {
+	cursor:default;
+	text-align:center;
+	/*블럭지정풀기*/
+	-ms-user-select: element; 
+   	-moz-user-select: text;
+   	-khtml-user-select: text;
+   	-webkit-user-select: text;
+   	user-select: text;
+}
+
+.seach{
+	width: 100%;
+	margin: 0 auto;
+	height: 20px;
+}
+
+
+.seach ul{
+	width:100%;
+	margin: 0 auto;
+	display: block;
+	margin-bottom: 10px;
+	
+}
+
+.seach ul li{
+	float: left;
+	margin-top: 5px;
+	margin-right: 10px;
+	
+}
+
+
+
+.seach select{
+	margin: 0 auto;
+}
+
+.totalCount{
+	float: right;
+}
+.pagingTab{
+	max-width: 1920px;
+	width:100%;
+	line-height: 30px;
+	height : 30px;
+	text-align:center;
+	margin: 0 auto;
+	font-size: 1.4em;
+	text-decoration:none;
+	clear: both;
+}
+
+
+a {
+	cursor:pointer;
+	text-decoration:none;
+	color: #000000;
+}
+a:hover { 
+	text-decoration:none;
+	font-weight: bold;
+	color: blue;
+	
+}
+
+
+.title{
+	font-size: 1.4em;
+	color: #000000;
+	font-weight: bold;
+	margin: 0 auto;
+	text-align: center;
+	height: 30px;
+	margin-bottom: 10px;
+}

@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="product">
+	
+	
+	<select id="getProduct" parameterType="kr.co.htop.admin.bean.ProductBean" resultType="kr.co.htop.admin.bean.ProductBean">
+		SELECT p.idx, p.code, p.name, p.price, p.custom, p.registerDate
+		, p.lastUpdate, p.makingCompany, p.madeIn, p.isDisplay, p.hitCount, p.isDeleted,img.imgUrl
+		FROM product as p, product_imgfile as img, product_imgfile_cnt as picnt		
+		<where>
+			AND picnt.product_idx = p.idx and picnt.imgfile_idx = img.idx
+       	</where> 
+       	order by p.idx 
+       	<!-- <if test="schArrVal == 1">
+       	asc
+       	</if>
+       	<if test="schArrVal != 1">
+       	desc
+       	</if>  -->
+       	desc
+       	<!-- limit #{pageNum} , #{total} -->
+  
+	</select>
+	
+	
+	<!-- <select id="selectDevice" parameterType="net.kankala.spring.admin.bean.DeviceBean" resultType="Integer">
+		SELECT idx FROM device where macaddress = #{mac_address}
+	</select>
+	
+	<select id="selectDeviceList" parameterType="String" resultType="net.kankala.spring.admin.bean.DeviceBean">
+		select d.idx,d.localip,d.player_last_connection,d.agent_last_connection,d.macaddress as mac_address,d.device_number,d.last_update,d.last_binary, d.player_datetime,d.playlist_status
+		FROM device as d,(SELECT branch_idx , didlist_idx FROM device where macaddress = #{mac_address}) as temp
+		where d.branch_idx = temp.branch_idx and d.didlist_idx = temp.didlist_idx
+		order by d.device_number asc
+	</select>
+	
+	<select id="selectDeviceOne" parameterType="String" resultType="net.kankala.spring.admin.bean.DeviceBean">
+		select d.idx,d.localip,d.player_last_connection,d.agent_last_connection,d.macaddress as mac_address,d.device_number,d.last_update,d.last_binary ,d.last_binary_flag, d.player_datetime,d.playlist_status,d.binary_status
+		FROM device as d
+		where d.macaddress = #{mac_address}
+		order by d.device_number asc
+	</select>
+	
+	<select id="getBinaryFileList" parameterType="date" resultType="net.kankala.spring.common.bean.FileBean">
+		select bf.idx,bf.name, bf.filePath , bf.checkSum
+		from binaryfile as bf
+		where bf.datetime = DATE_FORMAT(#{date},%Y-%m-%d %H:%i:%s)
+	</select>
+	
+	
+	<select id="isUpdatedPlayList" parameterType="String" resultType="net.kankala.spring.admin.bean.DeviceBean">
+		SELECT last_update,player_datetime,playlist_status FROM device where macaddress = #{macAddress}
+	</select>
+	
+	<update id="isUpdatedPlayList2" parameterType="String" >
+		update device set updatedUse = 1 where macaddress = #{mac_address}
+	</update>
+	
+	<select id="isUpdatedPlayListOk" resultType="int">
+		SELECT count(idx) as count FROM device where updatedUse = 1
+	</select>
+	
+	
+	
+	<select id="isUpdatedBinary" parameterType="String" resultType="net.kankala.spring.admin.bean.DeviceBean">
+		SELECT last_binary_flag,binary_status FROM device where macaddress = #{macAddress}
+	</select>
+	
+	<update id="isUpdatedBinary2" parameterType="String" >
+		update device set updatedUse = 1 where macaddress = #{mac_address}
+	</update>
+	
+	<select id="isUpdatedBinaryOk" resultType="int">
+		SELECT count(idx) as count FROM device where updatedUse = 1
+	</select>
+	
+	<select id="isUpdatedBinaryDate" parameterType="String" resultType="date">
+		SELECT last_binary FROM device where macaddress = #{macAddress}
+	</select>
+	
+	<update id="playListStatus" parameterType="net.kankala.spring.admin.bean.DeviceBean" >
+		update device set playlist_status = #{status},playlist_status_percent = #{statusPercent} 
+		<if test="status >= 9">
+        	,updatedUse = 0
+        </if>
+		where macaddress = #{mac_address} and idx = #{device_idx}
+	</update>
+	
+	<update id="binaryStatusUpdate" parameterType="net.kankala.spring.admin.bean.DeviceBean" >
+		update device set binary_status = #{status},binary_status_percent = #{statusPercent} 
+		<if test="status >= 9">
+        	,updatedUse = 0
+        </if>
+		where macaddress = #{mac_address} and idx = #{device_idx}
+	</update>
+	
+	<update id="appliedPlayList" parameterType="net.kankala.spring.admin.bean.DeviceBean" >
+		update device set playlist_status = 0,playlist_status_percent = 0, player_datetime = DATE_FORMAT(#{playlist_datetime},%Y-%m-%d %H:%i:%s) where macaddress = #{mac_address}
+	</update>
+	
+	<update id="appliedBinary" parameterType="net.kankala.spring.admin.bean.DeviceBean" >
+		update device set binary_status = 0,binary_status_percent = 0, last_binary_flag = 0 where macaddress = #{mac_address} 
+		
+		and last_binary = DATE_FORMAT(#{binary_datetime},%Y-%m-%d %H:%i:%s)
+	</update>
+	
+	
+	<insert id="addDevice" parameterType="net.kankala.spring.admin.bean.DeviceBean">
+		<selectKey keyProperty="idx" resultType="Integer" order="AFTER">
+       		SELECT last_insert_id()
+    	</selectKey>
+		INSERT INTO device(branch_idx,didlist_idx,name,player_last_connection,agent_last_connection,macaddress,device_number,localIp,last_update)
+		VALUES(#{group2_idx},#{group3_idx},#{device_number},#{date},#{date},#{mac_address},#{device_number},#{localIp},now())
+	</insert>
+	
+	<update id="updatedDevice" parameterType="net.kankala.spring.admin.bean.DeviceBean" >
+		update device set branch_idx = #{group2_idx} ,didlist_idx = #{group3_idx}, device_number = #{device_number}, 
+		localip = #{localIp},name = #{device_number} where macaddress = #{mac_address}
+	</update>
+	
+	<select id="checkDevice" parameterType="String" resultType="net.kankala.spring.api.bean.CheckDeviceBean">
+		SELECT d.idx as device_idx,bo.region_idx as group1_idx, d.branch_idx as group2_idx, d.didlist_idx as group3_idx,d.device_number
+		FROM device as d, branchoffice as bo
+		where macaddress = #{macAddress} and bo.idx = d.branch_idx
+	</select>
+	
+	<select id="getMasterDevice1" parameterType="String" resultType="Integer">
+		SELECT didlist_idx FROM device where macaddress = #{macAddress}
+	</select>
+	
+	<select id="getRegion" resultType="net.kankala.spring.api.bean.Group1Bean">
+		select idx as group_idx, name FROM region order by name asc
+	</select>
+	
+	
+	<select id="getRegion2" resultType="net.kankala.spring.api.bean.playList.file">
+		select mf.idx as file_idx,mf.filepath as checkSum
+
+		from mediafile as mf
+		
+	</select>
+	
+	<update id="getRegion3" parameterType="net.kankala.spring.api.bean.playList.file">
+		UPDATE mediafile set checkSum = #{checkSum}
+		where idx = #{file_idx}
+	</update>
+	
+	
+	<select id="getBranch" parameterType="net.kankala.spring.admin.bean.BranchBean" resultType="net.kankala.spring.api.bean.Group2Bean">
+		select bo.idx as group_idx,bo.name
+		from branchOffice as bo, region as r
+		<where>
+            <if test="region_idx != null and region_idx != 0">
+                 AND region_idx = #{region_idx}
+            </if>
+            
+			AND bo.region_idx = r.idx and bo.useflag = 0
+        </where>
+        order by bo.name desc
+	</select>
+	
+	
+	
+	<select id="getDidList" parameterType="net.kankala.spring.admin.bean.DidBean" resultType="net.kankala.spring.api.bean.Group3Bean">
+		select dl.idx as group_idx,dl.name as name,it.name as it_name
+		from didList as dl ,branchOffice as bo , region as r, installType as it
+		<where>
+			AND bo.idx = #{bo_idx} and bo.region_idx = r.idx and dl.it_idx = it.idx and bo.idx = dl.bo_idx and bo.useflag = 0 and dl.useflag = 0
+        </where>
+        order by dl.name desc 
+	</select>
+	
+	<select id="getDeviceSetting" parameterType="String" resultType="net.kankala.spring.admin.bean.DeviceBean">
+		select d.idx as idx, d.device_number,dl.it_idx,dl.countL,dl.countR,dl.viewType
+		from didList as dl,device as d
+		<where>
+			AND d.macaddress = #{mac_address} and d.didlist_idx = dl.idx
+        </where>
+	</select>
+	
+	
+	<select id="getEmissionList" parameterType="String" resultType="net.kankala.spring.admin.bean.EmissionBean">
+		select e.idx,e.`date`,e.date2,e.startTime,e.endTime,e.focusStartTime,e.focusEndTime,e.product,e.matterCount,e.changeType
+		,e.changeType2,e.imagebatch,e.showtype,e.type as contractType,e.countCharge,e.playTime,e.orders
+
+		from emission as e , branch_emission as be,device as d
+
+		where d.macaddress = #{macAddress} and d.didlist_idx = be.branch_idx and be.e_idx = e.idx and e.useflag = 0
+		AND e.date2 <![CDATA[ >= ]]> DATE_FORMAT(now(),%Y-%m-%d)
+		order by e.orders asc
+	</select>
+	
+	<select id="getMyEmissionList" parameterType="String" resultType="net.kankala.spring.admin.bean.EmissionBean">
+		select e.idx,e.`date`,e.date2,e.startTime,e.endTime,e.focusStartTime,e.focusEndTime,e.product,e.matterCount,e.changeType
+		,e.changeType2,e.imagebatch,e.showtype,e.type as contractType,e.countCharge,e.playTime,e.orders
+
+		from emission as e , emissionlist as el , branch_emissionlist as be,device as d
+
+		where d.macaddress = #{macAddress} and d.didlist_idx = be.branch_idx 
+		and be.emissionlist_idx = el.idx and el.idx = e.emissionList_idx and e.useflag = 0
+		AND ((e.date2 <![CDATA[ >= ]]> DATE_FORMAT(now(),%Y-%m-%d)) or (e.dateflag = 1))
+		order by e.orders asc
+	</select>
+	
+	
+	
+	
+	<select id="getOkEmissionList" parameterType="net.kankala.spring.admin.bean.EmissionBean" resultType="net.kankala.spring.api.bean.CountingBean">
+		select sum(dmv.counter) as counter , dmv.date,dmv.device_number
+		FROM device_media_view as dmv
+		where dmv.emission_idx = #{idx}
+		AND dmv.date <![CDATA[ >= ]]> DATE_FORMAT(#{date},%Y-%m-%d) and dmv.date <![CDATA[ <= ]]> DATE_FORMAT(#{date2},%Y-%m-%d)
+		group by dmv.branch_idx,dmv.didlist_idx,dmv.device_number,dmv.date
+		order by counter asc limit 0,1
+		AVG(counter) >= emission.countCharge
+	</select>
+	
+	
+	<select id="getFileList" parameterType="Integer" resultType="net.kankala.spring.api.bean.playList.file">
+		select mf.idx as file_idx,concat(mf.idx,_,mf.name) as name,mf.matter,mf.checkSum as checkSum
+
+		from mediafile as mf , emission_mediafile as em
+
+		where em.emission_idx = #{idx} and em.mediafile_idx = mf.idx
+		
+		order by mf.matter asc
+		
+	</select>
+	
+	<select id="getFileList2" parameterType="Integer" resultType="net.kankala.spring.api.bean.playList.file">
+		select mf.idx as file_idx,concat(mf.idx,_,mf.name) as name,mf.matter,mf.checkSum as checkSum
+
+		from mediafile as mf, emission_mediafile as em
+
+		where em.emission_idx = #{idx} and em.mediafile_idx = mf.idx
+		
+		order by mf.matter desc
+	</select>
+	
+	
+	<select id="getPlayFile" parameterType="Integer" resultType="net.kankala.spring.common.bean.FileBean">
+		select mf.idx, concat(mf.idx,_,mf.name) as name, mf.filepath
+		from mediafile as mf
+		where mf.idx = #{idx}
+	</select>
+	
+	<select id="getBinaryFile" parameterType="Integer" resultType="net.kankala.spring.common.bean.FileBean">
+		select bf.idx, bf.name, bf.filepath
+		from binaryfile as bf
+		where bf.idx = #{idx}
+	</select>
+	
+	<select id="connectionSelect" parameterType="net.kankala.spring.admin.bean.DeviceBean" resultType="net.kankala.spring.admin.bean.DeviceBean">
+		select player_last_connection, agent_last_connection
+		FROM device
+		<where>
+			
+    		AND idx = #{device_idx} AND macaddress = #{mac_address}
+		</where>
+		limit 0,1
+	</select>
+	<update id="connectionUpdate" parameterType="net.kankala.spring.admin.bean.DeviceBean">
+		update device 
+		set name = name
+		<if test="device_type == 1">
+            ,player_last_connection = #{date},player_version = #{version}
+            <if test="playlist_datetime != null and playlist_datetime != ">
+	           , player_datetime = DATE_FORMAT(#{playlist_datetime},%Y-%m-%d %H:%i:%s)
+	        </if>
+        </if>
+        <if test="device_type == 2">
+            ,agent_last_connection = #{date},agent_version = #{version}
+        </if>
+		<if test="device_type == 3">
+            ,agent_last_connection = #{date},agent_version = #{version} ,player_last_connection = #{date},player_version = #{version}
+        </if>
+		
+		<where>
+			AND idx = #{device_idx} AND macaddress = #{mac_address}
+		</where>
+	</update>
+	
+	
+	<select id="ping_select" parameterType="net.kankala.spring.admin.bean.DeviceBean" resultType="Integer">
+		SELECT idx FROM device_monitoring
+		<where>
+			AND device_idx = #{device_idx} AND date = DATE_FORMAT(#{date},%Y-%m-%d) and device_type = #{device_type}
+		</where>
+		<where>
+    		AND device_idx = #{did_idx} AND mediafile_idx = #{media_idx} AND date = DATE_FORMAT(#{date},%Y-%m-%d)
+		</where>
+	</select>
+	
+	<insert id="ping_insert" parameterType="net.kankala.spring.admin.bean.DeviceBean">
+		<selectKey keyProperty="monitoring_idx" resultType="Integer" order="AFTER">
+       		SELECT last_insert_id()
+    	</selectKey>
+		INSERT INTO device_monitoring(device_idx,device_type,date) 
+		VALUES(#{device_idx},#{device_type},#{date})
+		ON DUPLICATE KEY UPDATE device_idx = device_idx
+		<where>
+    		AND device_idx = #{did_idx} AND mediafile_idx = #{media_idx} AND date = DATE_FORMAT(#{date},%Y-%m-%d)
+		</where>
+	</insert>
+	
+	<update id="ping_update_1" parameterType="net.kankala.spring.admin.bean.DeviceBean">
+		UPDATE device_monitoring set percent = percent-#{percent}
+		where device_idx = #{device_idx} and date = DATE_FORMAT(#{date},%Y-%m-%d) and device_type = #{device_type}
+	</update>
+	<update id="ping_update_2" parameterType="net.kankala.spring.admin.bean.DeviceBean">
+		UPDATE device_monitoring set percent = percent-#{percent}
+		where device_idx = #{device_idx} and date = DATE_FORMAT(#{date2},%Y-%m-%d) and device_type = #{device_type}
+	</update>
+	
+	<insert id="noresponseInsert" parameterType="net.kankala.spring.admin.bean.DeviceBean">
+		INSERT INTO device_noresponse(device_idx,device_type,before_datetime,after_datetime,gapString,errormode,millis) 
+		VALUES(#{device_idx},#{device_type},#{date2},#{date},#{gap},#{errorMode},#{millis})
+	</insert> -->
+	
+	
+	
+</mapper> 

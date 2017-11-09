@@ -1,0 +1,262 @@
+         /* 폰트 & 기본 */
+@font-face{
+      font-family:'NanumBarunGothic';
+      src:url("/resources/fonts/NanumBarunGothic.eot");
+      src:local("☺"),url("/resources/fonts/NanumBarunGothic.woff") format("woff");
+}
+
+/* @font-face {font-family:'RaphaelIcons';
+    src:url('/resources/fonts/raphaelicons/raphaelicons-webfont.eot');
+    src:local('☺'), url('/resources/fonts/raphaelicons/raphaelicons-webfont.woff') format('woff'), url('/resources/fonts/raphaelicons/raphaelicons-webfont.ttf') format('truetype'), url('/resources/fonts/raphaelicons/raphaelicons-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+} */
+
+
+/*reset*/
+a, div, a, ul, li {
+    margin:0; padding:0;
+    border:none; outline:none;
+}
+li { list-style: none; }
+a { text-decoration: none; }
+
+body { font-family: "Helvetica Neue", Helvetica, Arial,"NanumBarunGothic","malgun gothic",  sans-serif; }
+/*-----------------------------------*/
+
+
+
+.container {
+	z-index:600;
+    position:relative;
+    background:url("/resources/image/admin/topBg.png") repeat-x;
+/*    background:#55759f;*/
+    min-width:1300px;
+    max-width:1980px;
+    margin:0;
+    width:100%; 
+    height:49px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+
+}
+.perHiPos span {
+	color:#bbbbcb;
+	font-size:12px;
+	line-height:21px;
+	
+}
+
+.perHi span {
+	display:block;
+	position:relative;
+	float:left;
+}
+.perHi {
+    position:absolute;
+    font-size:12px;
+    color:#bbbbcb;
+    height:20px;
+    line-height:22px;
+    right:2%;
+    top:5px;
+    text-align:right;
+}
+.perHi .humanImg {   
+    float:left;
+    display:block;
+    width:20px; 
+    height:20px;
+    position:relative;
+    top:-1px;
+}
+.perHi .smsImg {
+    float:right;
+    display:block;
+    width:20px;
+    height:15px;
+    position:relative;
+    top:2px;
+    margin-left:3px;
+}
+
+
+
+.perInfBox {
+    float:left;
+    width:169px;
+    display:block;
+    height:34px;
+    position:absolute;
+    right:2%;
+    top:26px;
+    
+}
+.perInfBox > li {
+    
+    display:block;
+    line-height:14px;
+    height:12px;
+    font-size:12px;
+    color:#bbbbcb;
+    text-align:right;
+    
+}
+
+
+/* 수정 ie 8에서  end */
+.perInfBox > li > a {
+    color:#bbbbcb; 
+}
+
+.perInfBox > li > a:hover
+{
+    text-decoration:underline;
+}
+
+.perInfText1,
+.perInfText2 {
+	position:absolute;
+}
+.perInfText1 {
+	width:70px; left:99px;
+}
+.perInfText2 {
+	width:90px; left:0;
+}
+.perInfText1 a {
+	width:70px;
+	height:30px;
+}
+.perInfText2 a {
+	width:91px;
+	height:30px;
+}
+
+
+.perInfText1 a img {
+    float:left;
+    width:18px; 
+    height:20px;
+    margin-top:-3px;
+    line-height:22px;
+}
+
+.perInfText2 a img {
+    float:left; 
+    width:18px; 
+    height:20px;
+    margin-top:-3px;
+    line-height:22px;
+}
+
+.navBox {
+    
+    width:51%;
+    min-width:412px;
+    height:49px;
+    position:absolute;
+    left:210px;
+    
+}
+
+
+
+.navText1 {
+    position:relative;
+    float:left;
+    min-width:103px;     
+    width:25%; 
+    height:49px;
+    text-align:center; line-height:40px;
+    cursor:pointer;
+}
+
+.navText1:hover {
+    background:#31659f;
+}
+
+.navText1 > a {
+    display:block;
+    width:100%;
+    border-right:1px solid #3569a2;
+    height:40px;
+    margin-top:5px;
+    
+}
+.nav4 > a {
+    border:none;
+}
+
+
+
+.logoBox {
+    width:210px;
+    height:50px;
+    position:absolute;
+    top:0px;
+    left:1%;
+}
+
+/*--------게시판----------*/
+
+.navText1 ul {
+    position:absolute;
+    /* background:#31659f; */
+    left:0;
+    top:49px;
+    width:100%;
+    
+
+    
+
+}
+
+
+/*------------background-image-------------*/
+
+
+.navText1 ul li a {
+    position:relative;
+    display:block;
+    color:#e3e3e3;
+    font-size:13px;
+    text-align:center;
+    min-width:70px;
+    width:100%;
+
+
+}
+
+.navText1 ul li:last-child a{
+    border:none;
+}
+
+.navText1 ul li a:hover {
+    color:#fff;
+    font-size:14px;
+    text-decoration:none;
+}
+
+.nav4 ul li a {
+    border:none;
+}
+
+
+
+.navText1 ul {
+    /* display:none; */
+}
+
+
+
+.navText1 ul li:hover > a:before
+{
+    content:'';
+    border:4px solid transparent;
+    border-left:5px solid #fff;
+    position:absolute;
+    left:50%; margin-left:-62px;
+    margin-top:14px;
+    
+        
+}

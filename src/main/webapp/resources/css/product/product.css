@@ -1,0 +1,275 @@
+.schbox li{
+	float:left;
+}
+
+.schbox{
+	width:100%;
+	height:40px;
+	line-height:32px;
+	padding:0 0 5px 0;
+}
+.schbox > ul{
+  
+}
+
+ul{padding:0; margin:0;}
+
+input{
+	width:210px;
+	height:30px;
+	border:none;
+	padding:0;
+	margin-left:20px;
+	border-bottom:1px solid #dadada;
+}
+
+.fui-search{
+	color:#0f67a2;
+}
+
+.schbtn{
+	width:43px;
+	height:44px;
+	border-left:none;
+    border-top:1px solid #dadada;
+    border-bottom:1px solid #dadada;
+    border-right:1px solid #dadada;
+	background-color:#fff;
+	padding:0;
+}
+
+.schbox > ul:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.btn_w {
+    width:100%
+    height:120px;
+}
+
+.schbox .w_title{
+    border:1px solid #dadada;
+    padding:5px 20px 4px 20px;
+}
+
+.schbox .r_btn{
+    float:right;
+ 
+}
+
+.btn2{
+	float:right;
+	border:1px solid #cbcbcb;
+	background-color:#f8f8f8;
+	padding:9px;
+}
+
+
+.list .contents{
+    width:100%;
+}
+.list .contents .t_notice{
+	border:1px solid #dadada;
+	width:100%;
+	font-size:11pt;
+    margin:0 auto;
+}
+
+.hdtxt{
+	height:34px;
+	line-height:34px;
+	text-align:center;
+	background-color:#f2f2f2;
+	padding:0;
+}
+
+.hdtxt2{
+	width:50%;
+	height:34px;
+	line-height:34px;
+	text-align:center;
+	background-color:#f2f2f2;
+	padding:0;
+}
+
+.hdtxt3{
+	width:30%;
+	height:34px;
+	line-height:34px;
+	text-align:center;
+	background-color:#f2f2f2;
+	padding:0;
+}
+
+
+td{
+	height:30px;
+	text-align:center;
+	border-bottom:1px solid #f4f4f4;
+	margin-left:27px;
+}
+
+.seach{
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+}
+
+.pagingTab{
+	width:100%;
+	height:37px;
+	text-align:center;
+	margin-top:10px;
+    position: relative;
+}
+.pagingTab ul{
+	height:37px;
+	text-align:center;
+	margin:0 auto;
+	margin-top:10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.pagingTab ul li{
+	float:left;
+	padding:10px;
+	
+}
+
+.pagingTab li a{
+	color:#555;
+}
+
+.pagingTab li a:hover{
+	color:#ec068d;
+	font-weight:bold;
+}
+.list{
+    margin-top:20px;
+}
+
+
+
+/* 공지사항 팝업 css*/
+
+ul:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+img{
+    width:570px;
+}
+
+.layers_of_list{
+	left: 656px; 
+	top: 102px;
+	z-index: 700;
+	position: absolute;
+	margin-left: 0 auto;
+	width: 570px;
+	height: 542px;
+	border-radius : 10px;
+	box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+	box-sizing: border-box;
+    text-align: center;
+	background-color: white;
+	
+}
+
+.layers_of_list textarea{
+	    width: 95%;
+    height: 247px;
+    border: none;
+    padding: 0;
+    margin-left: 12px;
+    margin-top: 7px;
+}
+.layers_of_list .close{    
+    position: absolute;
+    right: 9px;
+    top: 9px;
+    font-weight: bold;
+    color: #666;
+    width: 23px;
+    height: 23px;
+}
+
+.miniList{
+    height: 408px;
+    margin: 20px 20px 20px 20px;
+    border: 1px solid #dadada;
+    box-sizing: border-box;
+    border-bottom: none;
+}
+
+
+.popup_title > input[type="text"]{
+    width: 350px;
+}
+
+.popup_centents{
+    height: 267px;
+}
+
+.popup_centents > ul{
+    line-height: 34px;
+    border-bottom: 1px solid #dadada;
+    box-sizing: border-box;
+}
+
+.popup_title > ul{
+    line-height: 34px;
+    border-bottom: 1px solid #dadada;
+    box-sizing: border-box;
+}
+
+.popup_title > ul > li{
+    float: left;
+}
+
+.poptitle{
+    width:10%;
+    height:100%;
+    text-align: center;
+    border-right: 1px solid #dadada;
+}
+
+.poptxt{
+    width:89%;
+    text-align: left;
+    margin-left:4px;
+}
+
+.poptxt > input[type="text"]{
+    width:90%;
+    border-bottom:none;
+}
+
+.poptxt > input[type="file"]{
+    border-bottom:none;
+}
+
+.miniList .popup_centents > ul > li{
+    float: left;
+    
+}
+
+.miniList .popup_centents > ul > li > label{
+    line-height: 267px;
+}
+
+.btntxt{
+    margin-top:20px;
+}
+
+.btntxt > button{
+    border:1px solid #dadada;
+    padding:5px 10px 5px 10px;
+    background-color: #f8f8f8;
+}
+

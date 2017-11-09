@@ -1,0 +1,113 @@
+.divBoxMargin1 {
+	position:relative;
+	width:345px; 
+	height:35px;
+	margin-top:20px;
+	left:50%;
+	margin-left:-164px;
+}
+
+.divBoxMargin2 {
+	position:relative;
+	width:365px; 
+	height:35px;
+	margin-top:20px;
+	left:50%;
+	margin-left:-187px;
+}
+
+
+.btnBoxWidth1,
+.btnBoxWidth2,
+.btnBoxWidth3,
+.btnBoxWidth4,
+.btnBoxWidth5
+{
+	text-align:center;
+}
+
+.btnBoxWidth1 {
+	width:84px; height:35px;
+	float:left;
+	
+		
+}
+
+.btnBoxWidth2 {
+	width:95px; height:35px;
+	float:left;
+	margin-left:10px;
+	
+}
+
+.btnBoxWidth3 {
+	width:50px; height:35px;
+	float:left;
+	margin-left:10px;
+}
+
+.btnBoxWidth4 {
+	width:75px; height:35px;
+	float:left;
+	margin-left:10px;
+}
+
+.btnBoxWidth5 {
+	width:95px; height:35px;
+	float:left;
+	margin-left:10px;
+}
+
+.orderTotal_1 {
+	background:url("/resources/image/admin/order/numSum.png");
+	display:block; width:60px;height:30px; left:6.5%;
+	position:relative;
+	line-height:30px; text-align:center; padding:0px;
+}
+
+/* table warapper*/
+
+.board_table {
+	position:relative;
+	min-width:1120px;
+	max-width:95%;
+	margin-left:1%;
+	margin-left:1%;
+	margin:0 auto;
+	
+	
+
+}
+
+.table thead,
+.table tbody
+
+ {
+	border:1px solid #D4D0C8;
+	border-top:none;
+	white-space:nowrap; 
+}
+
+.table-responsive,
+.table {
+	width:100%;
+	
+	border:none;
+}
+
+.paging {
+	position:relative;
+	min-width:1120px;
+	max-width:1980px;
+}
+.pagination {
+	position:absolute;
+	
+	left:50%; margin-left:-70px;
+	height:40px; margin-top:0px;
+	
+}
+
+.changeCodeTd {
+	width:60px;
+}

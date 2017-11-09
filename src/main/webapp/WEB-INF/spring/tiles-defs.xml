@@ -1,0 +1,312 @@
+<!DOCTYPE tiles-definitions PUBLIC 
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">  
+<tiles-definitions>   
+ 	<definition name="home.index" template="/views/home.jsp">   
+	    <put-attribute name="title" value="야호이" />
+	            
+	    <!-- <put-attribute name="header" value="/views/header.jsp" />   
+	    <put-attribute name="menu" value="/views/menu.jsp" />      
+	    <put-attribute name="body" value="" />       
+	    <put-attribute name="footer" value="/views/footer.jsp" /> -->
+	       
+	</definition>
+ 	
+ 	
+ 	<definition name="WILDCARD:tiles.*.*.**" template="/views/{1}/{2}/{3}.jsp">
+	    <put-attribute name="title" value="{2}" />
+	    <put-attribute name="head" value="/views/{1}/include/head/{2}/{3}.jsp" />
+	    <put-attribute name="top" value="/views/{1}/include/top/top.jsp" />
+	    <put-attribute name="leftmenu" value="/views/{1}/include/leftmenu/leftmenu.jsp" />
+	    <put-attribute name="footer" value="/views/{1}/include/footer/{2}/{3}.jsp" />
+	</definition>
+	
+	<definition name="WILDCARD:tiles.*.index" template="/views/{1}/index.jsp">	    
+		<put-attribute name="title" value="home" />
+	    <put-attribute name="head" value="/views/{1}/include/head/index.jsp" />
+	    <put-attribute name="top" value="/views/{1}/include/top/top.jsp" />
+	    <!-- 
+	    
+	    <put-attribute name="leftmenu" value="/views/{1}/include/leftmenu/leftmenu.jsp" />
+	     -->
+	    <put-attribute name="footer" value="/views/{1}/include/footer/index.jsp" />
+	</definition>
+ 	<definition name="login.login" template="/views/login/login.jsp">
+	    <put-attribute name="title" value="kankala로그인" />
+	    <!-- <put-attribute name="header" value="/views/header.jsp" />
+	    <put-attribute name="menu" value="/views/menu.jsp" />
+	    <put-attribute name="body" value="" />
+	    <put-attribute name="footer" value="/views/footer.jsp" /> -->
+	    
+	</definition>
+ 	
+ 	
+	 <!-- <definition name="tiles.home.index" template="/views/home.jsp">   
+	    <put-attribute name="title" value="야호이" />
+	            
+	    <put-attribute name="header" value="/views/header.jsp" />   
+	    <put-attribute name="menu" value="/views/menu.jsp" />      
+	    <put-attribute name="body" value="" />       
+	    <put-attribute name="footer" value="/views/footer.jsp" />
+	       
+	</definition>
+	
+	<definition name="tiles.api.manual" template="/views/api/manual.jsp">   
+	    <put-attribute name="title" value="야호이" />
+	            
+	    <put-attribute name="header" value="/views/header.jsp" />   
+	    <put-attribute name="menu" value="/views/menu.jsp" />      
+	    <put-attribute name="body" value="" />       
+	    <put-attribute name="footer" value="/views/footer.jsp" />
+	       
+	</definition>
+	<definition name="tiles.api.listView" template="/views/api/listView.jsp">   
+	</definition>
+	
+	<definition name="tiles.api.monitoring" template="/views/api/monitoring.jsp">   
+	</definition>
+	
+	<definition name="tiles.api.view" template="/views/api/view.jsp">   
+	    <put-attribute name="title" value="야호이" />
+	            
+	    <put-attribute name="header" value="/views/header.jsp" />   
+	    <put-attribute name="menu" value="/views/menu.jsp" />      
+	    <put-attribute name="body" value="" />       
+	    <put-attribute name="footer" value="/views/footer.jsp" />
+	       
+	</definition>
+	
+	
+	
+	<definition name="index-layout" template="/view/home/index.jsp">
+		<put-attribute name="content1" expression="/view/home/index/content1/${content1}.jsp" />
+	    <put-attribute name="content2" expression="/view/home/index/content2/${content2}.jsp" />
+	    <put-attribute name="content3" expression="/view/home/index/content3/${content3}.jsp" />
+	    <put-attribute name="content4" expression="/view/home/index/content4/${content4}.jsp" />
+	    <put-attribute name="content5" expression="/view/home/index/content5/${content5}.jsp" />
+	</definition>
+	
+	<definition name="main-layout" template="/view/home/main/index.jsp">
+		<put-attribute name="content1" expression="/view/home/main/content1/${content1}.jsp" />
+	    <put-attribute name="content2" expression="/view/home/main/content2/${content2}.jsp" />
+	    <put-attribute name="content3" expression="/view/home/main/content3/${content3}.jsp" />
+	    <put-attribute name="content4" expression="/view/home/main/content4/${content4}.jsp" />
+	    <put-attribute name="content5" expression="/view/home/main/content5/${content5}.jsp" />
+	</definition>
+	
+	<definition name="join-layout" template="/view/home/join/index.jsp">
+		<put-attribute name="content1" expression="/view/home/join/content1/${content1}.jsp" />
+	    <put-attribute name="content2" expression="/view/home/join/content2/${content2}.jsp" />
+	    <put-attribute name="content3" expression="/view/home/join/content3/${content3}.jsp" />
+	    <put-attribute name="content4" expression="/view/home/join/content4/${content4}.jsp" />
+	    <put-attribute name="content5" expression="/view/home/join/content5/${content5}.jsp" />
+	</definition>
+	
+	<definition name="view-layout" template="/view/home/view/index.jsp">
+		<put-attribute name="content1" expression="/view/home/view/content1/${content1}.jsp" />
+	    <put-attribute name="content2" expression="/view/home/view/content2/${content2}.jsp" />
+	    <put-attribute name="content3" expression="/view/home/view/content3/${content3}.jsp" />
+	    <put-attribute name="content4" expression="/view/home/view/content4/${content4}.jsp" />
+	    <put-attribute name="content5" expression="/view/home/view/content5/${content5}.jsp" />
+	</definition>
+	
+	<definition name="service-layout" template="/view/home/service/index.jsp">
+		<put-attribute name="content1" expression="/view/home/service/content1/${content1}.jsp" />
+	    <put-attribute name="content2" expression="/view/home/service/content2/${content2}.jsp" />
+	    <put-attribute name="content3" expression="/view/home/service/content3/${content3}.jsp" />
+	    <put-attribute name="content4" expression="/view/home/service/content4/${content4}.jsp" />
+	    <put-attribute name="content5" expression="/view/home/service/content5/${content5}.jsp" />
+	</definition>
+	
+	<definition name="channel-layout" template="/view/home/channel/index.jsp">
+		<put-attribute name="content1" expression="/view/home/channel/content1/${content1}.jsp" />
+	    <put-attribute name="content2" expression="/view/home/channel/content2/${content2}.jsp" />
+	    <put-attribute name="content3" expression="/view/home/channel/content3/${content3}.jsp" />
+	    <put-attribute name="content4" expression="/view/home/channel/content4/${content4}.jsp" />
+	    <put-attribute name="content5" expression="/view/home/channel/content5/${content5}.jsp" />
+	</definition>
+	
+	<definition name="event-layout" template="/view/home/event/index.jsp">
+		<put-attribute name="content1" expression="/view/home/event/content1/${content1}.jsp" />
+	    <put-attribute name="content2" expression="/view/home/event/content2/${content2}.jsp" />
+	    <put-attribute name="content3" expression="/view/home/event/content3/${content3}.jsp" />
+	    <put-attribute name="content4" expression="/view/home/event/content4/${content4}.jsp" />
+	    <put-attribute name="content5" expression="/view/home/event/content5/${content5}.jsp" />
+	</definition>
+	
+	
+	
+	<definition name="WILDCARD:tiles.home.index.*.*.*.*.**" extends="index-layout">
+	    <put-attribute name="title" value="{5}" />
+	    <put-attribute name="head" value="/view/home/index/head/{1}.jsp" />
+	    <put-attribute name="top" value="/view/home/index/top/{2}.jsp" />
+	    <put-attribute name="main" value="/view/home/index/main/{3}.jsp" />
+	    <put-attribute name="footer" value="/view/home/index/footer/{4}.jsp" />
+	    
+	    <put-attribute name="top" value="/view/home/include/top/top.jsp" />
+	    <put-attribute name="footer" value="/view/home/include/footer/{1}.jsp" />
+	</definition>
+	
+	<definition name="WILDCARD:tiles.home.main.*.*.*.*.**" extends="main-layout">
+	    <put-attribute name="title" value="{5}" />
+	    <put-attribute name="head" value="/view/home/main/head/{1}.jsp" />
+	    <put-attribute name="top" value="/view/home/main/top/{2}.jsp" />
+	    <put-attribute name="main" value="/view/home/main/main/{3}.jsp" />
+	    <put-attribute name="footer" value="/view/home/main/footer/{4}.jsp" />
+	</definition>
+	<definition name="WILDCARD:tiles.home.view.*.*.*.*.**" extends="view-layout">
+	    <put-attribute name="title" value="{5}" />
+	    <put-attribute name="head" value="/view/home/view/head/{1}.jsp" />
+	    <put-attribute name="top" value="/view/home/main/top/{2}.jsp" />
+	    <put-attribute name="main" value="/view/home/view/main/{3}.jsp" />
+	    <put-attribute name="footer" value="/view/home/main/footer/{4}.jsp" />
+	</definition>
+	<definition name="WILDCARD:tiles.home.join.*.*.*.*.**" extends="join-layout">
+	    <put-attribute name="title" value="{5}" />
+	    <put-attribute name="head" value="/view/home/join/head/{1}.jsp" />
+	    <put-attribute name="top" value="/view/home/main/top/{2}.jsp" />
+	    <put-attribute name="main" value="/view/home/join/main/{3}.jsp" />
+	    <put-attribute name="footer" value="/view/home/main/footer/{4}.jsp" />
+	</definition>
+	<definition name="WILDCARD:tiles.home.service.*.*.*.*.**" extends="service-layout">
+	    <put-attribute name="title" value="{5}" />
+	    <put-attribute name="head" value="/view/home/service/head/{1}.jsp" />
+	    <put-attribute name="top" value="/view/home/main/top/{2}.jsp" />
+	    <put-attribute name="main" value="/view/home/service/main/{3}.jsp" />
+	    <put-attribute name="footer" value="/view/home/main/footer/{4}.jsp" />
+	</definition>
+	<definition name="WILDCARD:tiles.home.channel.*.*.*.*.**" extends="channel-layout">
+	    <put-attribute name="title" value="{5}" />
+	    <put-attribute name="head" value="/view/home/channel/head/{1}.jsp" />
+	    <put-attribute name="top" value="/view/home/main/top/{2}.jsp" />
+	    <put-attribute name="main" value="/view/home/channel/main/{3}.jsp" />
+	    <put-attribute name="footer" value="/view/home/main/footer/{4}.jsp" />
+	</definition>
+	<definition name="WILDCARD:tiles.home.event.*.*.*.*.**" extends="event-layout">
+	    <put-attribute name="title" value="{5}" />
+	    <put-attribute name="head" value="/view/home/event/head/{1}.jsp" />
+	    <put-attribute name="top" value="/view/home/main/top/{2}.jsp" />
+	    <put-attribute name="main" value="/view/home/event/main/{3}.jsp" />
+	    <put-attribute name="footer" value="/view/home/main/footer/{4}.jsp" />
+	</definition>
+	
+	
+	
+	<definition name="mobile.home.index" template="/view/mobile/home/index.jsp">   
+	    <put-attribute name="title" value="모바일홈" />
+	            
+	    <put-attribute name="header" value="/views/header.jsp" />   
+	    <put-attribute name="menu" value="/views/menu.jsp" />      
+	    <put-attribute name="body" value="" />       
+	    <put-attribute name="footer" value="/views/footer.jsp" />
+	       
+	</definition>
+	
+	
+	<definition name="mobile-index-layout" template="/view/mobile/home/index.jsp">
+		<put-attribute name="content1" expression="/view/home/index/content1/${content1}.jsp" />
+	    <put-attribute name="content2" expression="/view/home/index/content2/${content2}.jsp" />
+	    <put-attribute name="content3" expression="/view/home/index/content3/${content3}.jsp" />
+	    <put-attribute name="content4" expression="/view/home/index/content4/${content4}.jsp" />
+	    <put-attribute name="content5" expression="/view/home/index/content5/${content5}.jsp" />
+	</definition>
+	
+	<definition name="mobile-main-layout" template="/view/mobile/home/main/index.jsp">
+		<put-attribute name="content1" expression="/view/home/main/content1/${content1}.jsp" />
+	    <put-attribute name="content2" expression="/view/home/main/content2/${content2}.jsp" />
+	    <put-attribute name="content3" expression="/view/home/main/content3/${content3}.jsp" />
+	    <put-attribute name="content4" expression="/view/home/main/content4/${content4}.jsp" />
+	    <put-attribute name="content5" expression="/view/home/main/content5/${content5}.jsp" />
+	</definition>
+	
+	
+	<definition name="mobile-view-layout" template="/view/mobile/home/view/index.jsp">
+		<put-attribute name="content1" expression="/view/home/view/content1/${content1}.jsp" />
+	    <put-attribute name="content2" expression="/view/home/view/content2/${content2}.jsp" />
+	    <put-attribute name="content3" expression="/view/home/view/content3/${content3}.jsp" />
+	    <put-attribute name="content4" expression="/view/home/view/content4/${content4}.jsp" />
+	    <put-attribute name="content5" expression="/view/home/view/content5/${content5}.jsp" />
+	</definition>
+	
+	
+	<definition name="mobile-channel-layout" template="/view/mobile/home/channel/index.jsp">
+		<put-attribute name="content1" expression="/view/home/channel/content1/${content1}.jsp" />
+	    <put-attribute name="content2" expression="/view/home/channel/content2/${content2}.jsp" />
+	    <put-attribute name="content3" expression="/view/home/channel/content3/${content3}.jsp" />
+	    <put-attribute name="content4" expression="/view/home/channel/content4/${content4}.jsp" />
+	    <put-attribute name="content5" expression="/view/home/channel/content5/${content5}.jsp" />
+	</definition>
+	
+	
+	<definition name="WILDCARD:tiles.mobile.home.index.*.*.*.*.**" extends="mobile-index-layout">
+	    <put-attribute name="title" value="{5}" />
+	    <put-attribute name="head" value="/view/mobile/home/index/head/{1}.jsp" />
+	    <put-attribute name="top" value="/view/mobile/home/index/top/{2}.jsp" />
+	    <put-attribute name="main" value="/view/mobile/home/index/main/{3}.jsp" />
+	    <put-attribute name="footer" value="/view/mobile/home/index/footer/{4}.jsp" />
+	    
+	    <put-attribute name="top" value="/view/home/include/top/top.jsp" />
+	    <put-attribute name="footer" value="/view/home/include/footer/{1}.jsp" />
+	</definition>
+	
+	<definition name="WILDCARD:tiles.mobile.home.main.*.*.*.*.**" extends="mobile-main-layout">
+	    <put-attribute name="title" value="{5}" />
+	    <put-attribute name="head" value="/view/mobile/home/main/head/{1}.jsp" />
+	    <put-attribute name="top" value="/view/mobile/home/main/top/{2}.jsp" />
+	    <put-attribute name="main" value="/view/mobile/home/main/main/{3}.jsp" />
+	    <put-attribute name="footer" value="/view/mobile/home/main/footer/{4}.jsp" />
+	</definition>
+	<definition name="WILDCARD:tiles.mobile.home.view.*.*.*.*.**" extends="mobile-view-layout">
+	    <put-attribute name="title" value="{5}" />
+	    <put-attribute name="head" value="/view/mobile/home/view/head/{1}.jsp" />
+	    <put-attribute name="top" value="/view/mobile/home/main/top/{2}.jsp" />
+	    <put-attribute name="main" value="/view/mobile/home/view/main/{3}.jsp" />
+	    <put-attribute name="footer" value="/view/mobile/home/main/footer/{4}.jsp" />
+	</definition>
+	<definition name="WILDCARD:tiles.mobile.home.channel.*.*.*.*.**" extends="channel-layout">
+	    <put-attribute name="title" value="{5}" />
+	    <put-attribute name="head" value="/view/mobile/home/channel/head/{1}.jsp" />
+	    <put-attribute name="top" value="/view/mobile/home/main/top/{2}.jsp" />
+	    <put-attribute name="main" value="/view/mobile/home/channel/main/{3}.jsp" />
+	    <put-attribute name="footer" value="/view/mobile/home/main/footer/{4}.jsp" />
+	</definition>
+	
+	
+	
+	
+	
+	<definition name="error.notFound" template="/views/error/notFound.jsp">   
+	    <put-attribute name="title" value="call-road" />
+	</definition>
+	
+	
+	<definition name="WILDCARD:tiles.*.*.**" template="/views/{1}/{2}/{3}.jsp">
+	    <put-attribute name="title" value="{2}" />
+	    <put-attribute name="head" value="/views/{1}/include/head/{2}/{3}.jsp" />
+	    <put-attribute name="top" value="/views/{1}/include/top/top.jsp" />
+	    <put-attribute name="leftmenu" value="/views/{1}/include/leftmenu/leftmenu.jsp" />
+	    <put-attribute name="footer" value="/views/{1}/include/footer/{2}/{3}.jsp" />
+	</definition>
+	
+	<definition name="WILDCARD:tiles.*.index" template="/views/{1}/index.jsp">	    
+		<put-attribute name="title" value="home" />
+	    <put-attribute name="head" value="/views/{1}/include/head/index.jsp" />
+	    <put-attribute name="top" value="/views/{1}/include/top/top.jsp" />
+	    <put-attribute name="leftmenu" value="/views/{1}/include/leftmenu/leftmenu.jsp" />
+	    <put-attribute name="footer" value="/views/{1}/include/footer/index.jsp" />
+	</definition>
+	
+	
+	<definition name="login.login" template="/views/login/login.jsp">
+	    <put-attribute name="title" value="kankala로그인" />
+	            
+	    <put-attribute name="header" value="/views/header.jsp" />
+	    <put-attribute name="menu" value="/views/menu.jsp" />
+	    <put-attribute name="body" value="" />
+	    <put-attribute name="footer" value="/views/footer.jsp" />
+	    
+	</definition>
+	 -->
+	
+ 
+</tiles-definitions>

@@ -1,0 +1,254 @@
+section{
+	
+	width: 97%;
+	width: 1200px;
+	margin: 0 auto;
+	margin-top: 30px;
+	border-radius: 10px 10px 10px 10px;
+	height: 700px;
+	min-width:600px;
+	
+	border: 1px solid #000000;
+	scroll:auto;
+	min-width:500px;
+	max-width:1920px;
+	
+	max-height:1200px;
+	overflow: hidden;
+	
+}
+thead {
+	
+	border-bottom: 1px solid #000000;
+	
+}
+
+
+th {
+
+	text-align:center;
+}
+
+
+thead,tbody {
+	white-space:nowrap; 
+	
+}
+
+tr{
+	display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+td {
+	cursor:pointer;
+	padding-top: 1px;
+}
+
+ul { margin: 0;  padding: 0; }
+
+table {
+	scroll:none;
+	width:100%;
+	text-align:center;
+	
+	/*블럭지정막기*/
+	-ms-user-select: none; 
+   	-moz-user-select: -moz-none;
+   	-khtml-user-select: none;
+   	-webkit-user-select: none;
+   	user-select: none;
+}
+.pagingTab{
+	line-height: 30px;
+	height : 30px;
+	text-align:center;
+	margin: 0 auto;
+	font-size: 1.2em;
+	text-decoration:none;
+	clear: both;
+}
+
+
+a {
+	cursor:pointer;
+	text-decoration:none;
+	color: #000000;
+}
+a:hover { 
+	text-decoration:none;
+	font-weight: bold;
+	color: blue;
+	
+}
+
+
+.textarea{
+	width: 600px;
+	height: 100px;	
+}
+
+
+
+
+
+
+.miniList{
+	width : 400px;
+	margin: 0 auto;
+	text-align: center;
+	
+}
+
+
+
+
+.list{
+	overflow : visible;
+	margin: 0 auto;
+	margin-top :10px;
+	width: 80%;
+	height: 300px;
+	border: 1px solid #000000;
+	
+	position:relative;
+	min-width:400px;
+	max-width:1920px;
+}
+
+
+
+
+.title{
+	color: #000000;
+	font-weight: bold;
+	margin: 0 auto;
+	text-align: center;
+	height: 30px;
+}
+
+ul{
+	list-style:none;
+}
+
+.insert ul{
+	overflow:hidden;
+	width:85%;
+	margin: 0 auto;
+	display: block;
+	margin-bottom: 10px;
+}
+
+.insert ul li{
+	float: left;
+	width: 275px;
+}
+
+.insert ul .date{
+	clear: both;
+}
+
+
+.insert ul li input{
+	width: 202px;
+}
+.insert label{
+	color: #000000;
+	font-size: 0.8em;
+}
+
+
+.insert ul li:nth-child(2n){
+	margin-left: 5px;
+	
+}
+.insert ul li:nth-child(2n-1){
+	clear: both;
+	
+	
+}
+.insert ul li button{
+	clear: both;
+}
+
+.insert ul li:last-child{
+
+}
+
+.seach{
+	width: 80%;
+	margin: 0 auto;
+	height: 20px;
+}
+.seach select{
+	margin: 0 auto;
+}
+
+.totalCount{
+	float: right;
+}
+
+
+
+
+.layers_of_list{
+	display: block; 
+	left: 656px; 
+	top: 102px;
+	z-index: 700;
+	position: absolute;
+	margin-left: 0 auto;
+	width: 600px;
+	height: 600px;
+	border-radius : 10px;
+	box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+	box-sizing: border-box;
+	
+	background-color: white;
+	
+}
+
+.layers_of_list textarea{
+	width: 400px;
+	height: 250px;
+	
+}
+.layers_of_list .close{
+	
+	position: absolute;
+	right :10px;
+	font-weight: bold;
+    color: #666;
+	
+	
+}
+
+/* 
+#boardModify{
+	display: block; 
+	left: 656px; 
+	top: 102px;
+	z-index: 700;
+	position: absolute;
+	margin-left: 0 auto;
+	width: 600px;
+	height: 400px;
+	border-radius : 10px;
+	box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+	box-sizing: border-box;
+	
+	background-color: white;
+}
+
+#boardModify .close{
+	
+	position: absolute;
+	right :10px;
+	font-weight: bold;
+    color: #666;
+	
+	
+} */
+
+

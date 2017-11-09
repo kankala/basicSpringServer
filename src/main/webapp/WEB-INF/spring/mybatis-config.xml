@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "HTTP://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	
+	<settings>  
+        <setting name="cacheEnabled"              value="true"/>  
+        <setting name="lazyLoadingEnabled"        value="false"/>  
+        <setting name="multipleResultSetsEnabled" value="true"/>  
+        <setting name="useColumnLabel"            value="true"/>  
+        <setting name="useGeneratedKeys"          value="false"/>  
+        <setting name="defaultExecutorType"      value="SIMPLE"/>  
+        <setting name="defaultStatementTimeout"  value="10"/>  
+    </settings>
+
+    <mappers>
+		<mapper resource="sql/login.xml" />
+		<mapper resource="sql/admin/product.xml" />
+		
+		<mapper resource="sql/api/apiProduct.xml" />
+		
+		
+        <!-- <mapper resource="sql/login.xml" />
+        
+        <mapper resource="sql/admin/addDid.xml" />
+        
+        <mapper resource="sql/common/common.xml" />
+        
+        <mapper resource="sql/admin/addContract.xml" />
+        
+        <mapper resource="sql/admin/emission.xml" />
+        
+        <mapper resource="sql/admin/user.xml" />
+        
+        <mapper resource="sql/admin/board.xml" />
+        
+        
+        <mapper resource="sql/admin/countingView.xml" />
+        
+        <mapper resource="sql/admin/monitorings.xml" />
+        
+         
+         
+        <mapper resource="sql/api/view.xml" />
+        
+        <mapper resource="sql/api/counting.xml" />
+        
+        <mapper resource="sql/api/deviceEmission.xml" />
+        
+        <mapper resource="sql/api/monitoring.xml" />
+        
+        <mapper resource="sql/admin/myPlayList.xml" />
+        
+        <mapper resource="sql/admin/myEmission.xml" /> -->
+     </mappers>
+     
+     
+     
+</configuration>

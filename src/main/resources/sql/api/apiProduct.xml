@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="apiProduct">
+	
+	
+	
+	
+	<insert id="putProduct" parameterType="kr.co.htop.api.bean.ApiProductBean">
+		<selectKey keyProperty="productIdx" resultType="Integer" order="AFTER">
+       		SELECT last_insert_id()
+    	</selectKey>
+		INSERT INTO product(code, name, price, custom, registerDate, lastUpdate, makingCompany, madeIn)
+		VALUES
+		<!-- <foreach collection="beanList" item="list" open="(" close=")" separator=" , "> -->
+			(#{code},#{name},#{price},#{custom},now(),now()
+			,#{makingCompany},#{madeIn})
+		
+	</insert>
+	
+	<insert id="putProduct_img" parameterType="kr.co.htop.api.bean.ApiProductBean">
+		<selectKey keyProperty="imgIdx" resultType="Integer" order="AFTER">
+       		SELECT last_insert_id()
+    	</selectKey>
+		INSERT INTO product_imgfile(imgUrl)
+		VALUES	(#{imgUrl})
+		
+	</insert>
+	
+	<insert id="putProduct_img_cnt" parameterType="kr.co.htop.api.bean.ApiProductBean">
+		INSERT INTO product_imgfile_cnt(product_idx, imgfile_idx)
+		VALUES	(#{productIdx},#{imgIdx})
+	</insert>
+	
+	
+</mapper>

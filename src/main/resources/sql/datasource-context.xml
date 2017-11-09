@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="jdbcProp" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+<property name="location" value="classpath:/sql/db.properties" />
+</bean>
+
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+<property name="driverClassName" value="${driver}" />
+<property name="url" value="${url}" />
+<property name="username" value="${username}" />
+<property name="password" value="${password}" />
+<property name="initialSize" value="10"/>
+<property name="maxActive" value="10"/>
+<property name="minIdle" value="1"/>
+<property name="maxIdle" value="5"/>
+<property name="poolPreparedStatements" value="true"></property>
+<property name="maxOpenPreparedStatements" value="50"></property>
+<!-- 특정 시간마다 validationQuery를 실행 셋팅 시작 -->
+<property name="validationQuery" value="select 1"/>
+<property name="testOnBorrow" value="true"/>
+<property name="testOnReturn" value="true" />
+
+<property name="testWhileIdle" value="true"/>
+<property name="timeBetweenEvictionRunsMillis" value="130000"/>
+<property name="minEvictableIdleTimeMillis" value="120000"/>
+<!-- 특정 시간마다 validationQuery를 실행 셋팅 끝 -->
+</bean>
+<!-- oracle -->
+<!-- <property name="validationQuery" value="select 1 from dual" /> -->
+<!-- 
+<bean id="dataSourceLohbs" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+<property name="driverClassName" value="${lohbs.driver}" />
+<property name="url" value="${lohbs.url}" />
+<property name="username" value="${lohbs.username}" />
+<property name="password" value="${lohbs.password}" />
+<property name="initialSize" value="10"/>
+<property name="maxActive" value="500"/>
+<property name="minIdle" value="10"/>
+<property name="maxIdle" value="50"/>
+<property name="poolPreparedStatements" value="true"></property>
+<property name="maxOpenPreparedStatements" value="50"></property>
+특정 시간마다 validationQuery를 실행 셋팅 시작
+<property name="validationQuery" value="select 1"/>
+<property name="testWhileIdle" value="true"/>
+<property name="timeBetweenEvictionRunsMillis" value="30000"/>
+<property name="minEvictableIdleTimeMillis" value="60000"/>
+특정 시간마다 validationQuery를 실행 셋팅 끝
+</bean>
+
+<bean id="dataSourceHomeplus" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+<property name="driverClassName" value="${homeplus.driver}" />
+<property name="url" value="${homeplus.url}" />
+<property name="username" value="${homeplus.username}" />
+<property name="password" value="${homeplus.password}" />
+<property name="initialSize" value="10"/>
+<property name="maxActive" value="500"/>
+<property name="minIdle" value="10"/>
+<property name="maxIdle" value="50"/>
+<property name="poolPreparedStatements" value="true"></property>
+<property name="maxOpenPreparedStatements" value="50"></property>
+특정 시간마다 validationQuery를 실행 셋팅 시작
+<property name="validationQuery" value="select 1"/>
+<property name="testWhileIdle" value="true"/>
+<property name="timeBetweenEvictionRunsMillis" value="30000"/>
+<property name="minEvictableIdleTimeMillis" value="60000"/>
+특정 시간마다 validationQuery를 실행 셋팅 끝
+</bean>
+ -->
+
+
+    
+</beans>

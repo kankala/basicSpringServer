@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="login">
+	
+	
+	
+	<select id="getUser" parameterType="kr.co.htop.login.bean.LoginBean" resultType="kr.co.htop.admin.bean.UserBean">
+	
+		select u.idx, u.id, u.level, u.password
+		FROM users as u
+		where id = #{id} and password = #{password}
+	</select>
+	
+	<!-- <select id="getUser2" parameterType="Integer" resultType="kr.co.tvking.login.bean.UsingSiteBean">
+	
+		SELECT s.idx as siteIdx , s.name as siteName,suu.idx as usingSiteIdx
+		, s.domain as usingSiteDomain
+		FROM siteUsingUser as suu,site as s
+		where suu.user_idx = #{value} and suu.site_idx = s.idx 
+		order by suu.rank asc
+	</select> -->
+	
+	
+</mapper> 

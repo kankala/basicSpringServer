@@ -1,0 +1,655 @@
+/* reset-PC */ 
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fields,legend,texture,p,block quote,th,td,input,select,texture,button {margin:0;padding:0}
+fields,dmg {border:0 none}
+dl,ul,ol,menu,li {list-style:none}
+blockquote, q {quotes: none}
+block quote:before, block quote:after,q:before, q:after {content:'';content:none}
+input,select,texture,button {vertical-align:middle}
+input,select{border:1px solid #dadada;}
+input{border:none; border-bottom:1px solid #dadada;}
+button {border:0 none;background-color:transparent;cursor:pointer}
+body {background:#fff;height:100%;}
+body,th,td,input,select,texture,button,label,textarea,select {font-size:12px;line-height:1.5;font-family:'돋움',dotum,sans-serif;color:#333;} /* color값은 디자인가이드에 맞게사용 */
+a {color:#333;text-decoration:none}
+a:active, a:hover {text-decoration:none;}
+address,caption,cite,code,don,em,var {font-style:normal;font-weight:normal}
+html{height:100%;}
+li{list-style:none;}
+
+/* IE 스크롤 */
+html, body {
+scrollbar-face-color:#fff; /*배경*/
+scrollbar-highlight-color: #000; /*선택*/
+scrollbar-3dlight-color: #fff; /*3D 경계*/
+scrollbar-shadow-color: #000; /*그림자*/
+scrollbar-darkshadow-color: #fff; /*어두운 그림자*/
+scrollbar-track-color: #fff; /*트랙 색*/
+scrollbar-arrow-color: #af0000; /*화살표*/
+}
+
+/* 크롬/사파리 스크롤 */
+::-webkit-scrollbar{width:15px;}
+::-webkit-scrollbar-thumb {
+ -webkit-border-radius: 0px;
+ border-radius: 0px;
+ background: rgba(255,255,255,0.8); 
+ -webkit-box-shadow: inset 0 0 1px rgba(0,0,0,9.9); 
+}
+
+.wrap {
+	height:100%;
+    min-width:1024px;
+    max-width:1920px;
+    position: relative;
+}
+.wrap_main {
+	position: absolute;
+    width: 100%;
+    top: 114px;
+    bottom: 0;
+}
+.wrap_main:AFTER{
+	content:" ";
+	display:block;
+	clear:both;
+}
+
+
+header{
+    width:100%;
+    height:114px;
+
+}
+
+section{
+    min-width: 824px;
+    max-width: 1720px;
+    position: absolute;
+    left: 200px;
+    right: 0;
+    font-size: 12px;
+    float: left;
+    margin: 0 auto;
+    padding: 0 2%;
+    box-sizing: border-box;
+    border-top: 1px solid #bababa;
+}
+
+#boardBox{
+    width:100%;
+	padding:20px 0 0 0px;
+}
+
+.boardBox{
+	width:100%;
+	margin-top:20px;
+	border-top:1px solid #dadada;
+}
+
+
+h1,h2{
+	margin:0;
+	padding:0 0 16px 0;
+	font-style:none;
+	font-size:16pt;
+	color:#333;
+}
+
+
+
+/**/
+
+#leftmenu {
+	width:18%;
+	height:100%;
+	background-color:#fafafa;
+	border:1px solid #bababa;
+	float:left;
+	min-height:400px;
+    position:relative;
+    min-width:200px;
+    max-width:200px;
+    box-sizing:border-box;
+}
+
+#leftmenu #topMenu div{
+	width:100%;
+	height:48px;
+	line-height:48px;
+	text-align:center;
+    float: left;
+	
+}
+
+#topMenu > ul:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+a {
+	text-decoration:none;
+	cursor:pointer;
+}
+
+.nav{
+	color:#ec068e;
+    font-size: 12px;
+}
+
+.nav > ul > li{
+	float: left;
+}
+.nav a{
+	color:#ec068e;
+	font-size:12px;
+	padding-bottom:2px;
+	
+}
+
+.nav .l_menu{
+    width:20%;
+    text-align: center;
+}
+
+.nav > ul{
+    width:100%;
+    height:100%;
+}
+
+
+.nav .r_menu{
+    width:80%;
+    text-align: center;
+}
+.nav a:hover{
+	text-decoration:none;
+	border-bottom:2px solid #ec068e;
+}
+
+.mini{
+	border-bottom:1px solid #bababa;
+}
+
+/* left menu icons */
+
+/*.fui-arrow-left{padding-right:30px;}
+.fui-user{padding-right:50px;}
+.fui-credit-card{padding-right:50px;}
+.fui-clip{padding-right:50px;}
+.fui-exit{padding-right:50px;}
+.fui-windows{margin-left:16px;margin-right:20px;}
+.fui-bookmark{padding-right:56px; margin-left:-10px;}
+.fui-list{padding-right:50px;}
+.fui-info-circle{padding-right:26px;}
+.fui-arrow-right{padding-left:26px;}*/
+
+.marg a{
+    margin-left:15px;
+}
+
+/* top icons */
+.fui-power{color:#ec068e; font-size:20px;}
+.fui-home{color:#ec068e; font-size:19px;}
+.fui-lock{color:#ec068e; font-size:19px;}
+
+
+#topInfo{
+	float:right;
+	color:#fff;
+    line-height:40px;
+    margin-right:10px;
+}
+
+#navline{
+	width:100%;
+	height:40px;
+	background-color:#0f67a2;
+	/* float: left; */
+}
+
+#img{
+	height:74px;
+}
+
+#img img{width:150px; padding:10px 0 0 24px; }
+#img:after
+{
+	content: "";
+    display: block;
+    clear: both;
+}
+header #img .icons{
+    height: 71px;
+    position: absolute;
+    list-style: none;
+    /* float: right; */
+    margin: 0;
+    right: 0;
+    top: 0;
+    line-height: 40px;
+}
+
+header #img .icons li{
+	list-style:none;
+	float:right;
+	padding:20px 20px 20px 20px;
+	text-align:center;
+}
+
+
+/* 폰트색상변경 class */
+.font_red{
+    color:red;
+}
+
+.font_yellow{
+    color:yellow;
+}
+
+.font_orange{
+    color:orange;
+}
+
+
+
+/**/
+
+
+/* 폰트 굵게 변경 class*/
+
+.font_bold{
+    font-weight: bold;
+}
+
+/**/
+
+
+/* 테이블안에 스크롤 넣는 코드 { */
+table#tbl_location2 {
+    display: table;
+    width: 100%;
+}
+table#tbl_location2 thead, table#tbl_location2 tbody {
+    float: left;
+    width: 100%;
+}
+table#tbl_location2 tbody {
+    overflow: auto;
+    height: 150px;
+}
+table#tbl_location2 tr {
+    width: 100%;
+    display: table;
+    text-align: left;
+}
+table#tbl_location3 th, table#tbl_location2 td {
+    width: 50%;
+    padding-left: 50px;
+}
+
+/* 테이블안에 스크롤 넣는 코드 { */
+table#tbl_location3 {
+    display: table;
+    width: 100%;
+}
+table#tbl_location3 thead, table#tbl_location3 tbody {
+    float: left;
+    width: 100%;
+}
+table#tbl_location3 tbody {
+    overflow: auto;
+    height: 150px;
+}
+table#tbl_location3 tr {
+    width: 100%;
+    display: table;
+    text-align: left;
+}
+table#tbl_location3 th, table#tbl_location3 td {
+    width: 33%;
+}
+
+
+table#tbl_location4 {
+    display: table;
+    width: 100%;
+}
+table#tbl_location4 thead, table#tbl_location4 tbody {
+    float: left;
+    width: 100%;
+}
+table#tbl_location4 tbody {
+    overflow: auto;
+    height: 320px;
+}
+table#tbl_location4 tr {
+    width: 100%;
+    display: table;
+    text-align: left;
+}
+
+table#tbl_location4 th, table#tbl_location4 td{
+    width:25%;
+}
+
+
+table#tbl_location5 {
+    display: table;
+    width: 100%;
+}
+table#tbl_location5 thead, table#tbl_location5 tbody {
+    float: left;
+    width: 100%;
+}
+table#tbl_location5 tbody {
+    overflow: auto;
+    height: 250px;
+}
+table#tbl_location5 tr {
+    width: 100%;
+    display: table;
+    text-align: left;
+}
+
+table#tbl_location5 th, table#tbl_location5 td{
+    width:20%;
+}
+/* } 테이블안에 스크롤 넣는 코드 */
+
+
+table#tbl_location7 {
+    display: table;
+    width: 100%;
+}
+table#tbl_location7 thead, table#tbl_location7 tbody {
+    float: left;
+    width: 100%;
+}
+table#tbl_location7 tbody {
+    overflow: auto;
+    height: 500px;
+}
+table#tbl_location7 tr {
+    width: 100%;
+    display: table;
+    text-align: left;
+}
+
+table#tbl_location7 th, table#tbl_location7 td{
+    width:14.2%;
+}
+/* } 테이블안에 스크롤 넣는 코드 */
+
+
+/* } 테이블안에 스크롤 넣는 코드 */
+
+
+table#tbl_location6 {
+    display: table;
+    width: 100%;
+}
+table#tbl_location6 thead, table#tbl_location6 tbody {
+    float: left;
+    width: 100%;
+}
+table#tbl_location6 tbody {
+    overflow: auto;
+    height: 150px;
+}
+table#tbl_location6 tr {
+    width: 100%;
+    display: table;
+    text-align: left;
+}
+
+table#tbl_location6 th, table#tbl_location6 td{
+    width:16.6%;
+}
+/* } 테이블안에 스크롤 넣는 코드 */
+
+
+
+/* 패스워드 변경 팝업 */
+
+.pw_popup_title > ul:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+
+.pw_layers_of_list{
+	display: block; 
+	left: 656px; 
+	top: 102px;
+	z-index: 700;
+	position: absolute;
+	margin-left: 0 auto;
+	width: 570px;
+	height: 200px;
+	border-radius : 10px;
+	box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+	box-sizing: border-box;
+    text-align: center;
+	background-color: white;
+	
+}
+
+.pw_layers_of_list textarea{
+	    width: 95%;
+    height: 247px;
+    border: none;
+    padding: 0;
+    margin-left: 12px;
+    margin-top: 7px;
+}
+.pw_layers_of_list .close{    
+    position: absolute;
+    right: 9px;
+    top: 9px;
+    font-weight: bold;
+    color: #666;
+    width: 23px;
+    height: 23px;
+}
+
+.pw_miniList{
+    height: 71px;
+    margin: 20px 20px 20px 20px;
+    border: 1px solid #dadada;
+    box-sizing: border-box;
+    border-bottom: none;
+}
+
+
+.pw_popup_title > input[type="text"]{
+    width: 350px;
+}
+
+.pw_popup_title > ul{
+    line-height: 34px;
+    border-bottom: 1px solid #dadada;
+    box-sizing: border-box;
+}
+
+.pw_popup_title > ul > li{
+    float: left;
+}
+
+.pw_poptitle{
+    width:15%;
+    height:100%;
+    text-align: center;
+    border-right: 1px solid #dadada;
+}
+
+.pw_poptxt{
+    width:84%;
+    text-align: left;
+    margin-left:4px;
+}
+
+.pw_poptxt > input[type="text"]{
+    width:90%;
+    border-bottom:none;
+}
+
+.pw_poptxt > input[type="file"]{
+    border-bottom:none;
+}
+
+.pw_miniList .popup_centents > ul > li{
+    float: left;
+    
+}
+
+.pw_miniList .popup_centents > ul > li > label{
+    line-height: 267px;
+}
+
+.pw_btntxt{
+    margin-top:20px;
+}
+
+.pw_btntxt > button{
+    border:1px solid #dadada;
+    padding:5px 10px 5px 10px;
+    background-color: #f8f8f8;
+}
+
+/**/
+
+
+/* Modal Popup*/
+
+.modal_pop
+{
+	overflow: auto;
+    overflow-y: hidden;
+    position: fixed;
+   
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: rgba(255,255,255,.7);
+
+}
+.modal_pop .modal_wrap
+{
+	
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    width: 400px;
+    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px #999;
+}
+ .modal_wrap .main_title
+{
+    word-wrap:break-word;
+	    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #444;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+ .modal_wrap .area_form
+{
+
+   /*  margin-top: 20px;	 */
+}
+ .modal_wrap .area_form .title
+{
+	text-align: left;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+.modal_wrap .area_form .modal_content
+{
+     word-wrap:break-word;
+	    font-size: 14px;
+	    background-color:#fff;
+ padding:20px 10px;
+ border-bottom: 1px solid #ddd;
+}
+ .modal_wrap .area_form .area_id , .modal_wrap .area_form .area_pw
+{
+	    padding-bottom: 20px;
+}
+ .modal_wrap .area_form .area_id input, .modal_wrap .area_form .area_pw input
+{
+	    display: block;
+    width: 100%;
+    height: 34px;
+    /* padding: 6px 12px; */
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.modal_wrap .area_form .area_submit
+{
+	padding: 20px;
+}
+.modal_wrap .area_form .area_submit span
+{
+	display:inline-block;
+}
+
+.ico_btn {
+	width:100%;
+    display: inline-block;
+    position: relative;
+    /* height: 28px; */
+    font-weight:bold;
+    margin: 0;
+    padding: 4px 20px;
+    background: #F3F3F3 url(../img/ie/btn.png) repeat-x;
+    background: -webkit-gradient(linear,0% 0%,0% 100%,from(#FFF),to(#F3F3F3));
+    background: linear-gradient(to bottom,#FFF 0%,#F3F3F3 100%);
+    border: 1px solid;
+    border-color: #CCC #C6C6C6 #C3C3C3 #CCC;
+    border-radius: 3px;
+    white-space: nowrap;
+    cursor: pointer;
+    text-decoration: none !important;
+    text-align: center;
+    text-shadow: 0 1px 0 #FFF;
+    box-shadow: inset 0 0 1px 1px #FFF,0 1px 1px rgba(0,0,0,.1);
+     
+    vertical-align: middle;
+}
+.submit {
+	width:100%;
+    font-weight: 700;
+    color: #FFF;
+    text-shadow: 0 1px 0 #000;
+    border-color: #669 !important;
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
+    background: #55B url(../img/ie/btn_blue.gif) repeat-x;
+    background: -webkit-gradient(linear,0% 0%,0% 100%,from(#77C),to(#55B));
+    background: linear-gradient(to bottom,#77C 0%,#55B 100%);
+}
+.t_click {
+	/* background: #ADECFF; */
+	background: #68ddff;
+}
+/* } 테이블안에 스크롤 넣는 코드 */
